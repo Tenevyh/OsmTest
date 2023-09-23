@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#FFFFFF"
     android:padding="16dp">
 
     <ImageView
         android:id="@+id/pointIcon"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:src="@drawable/ic_foto"
         android:layout_margin="8dp"
+        android:background="#00FFFFFF"
         android:scaleType="fitCenter"
-        android:background="@drawable/rounded_background"
+        android:src="@drawable/ic_foto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,6 +32,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginStart="32dp"
+        android:background="#00FFFFFF"
         android:src="@drawable/ic_gps"
         app:layout_constraintStart_toEndOf="@+id/pointIcon"
         app:layout_constraintTop_toBottomOf="@+id/pointName" />
@@ -42,9 +43,9 @@
         android:layout_height="wrap_content"
         android:text="GPS"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/gpsIcon"
         app:layout_constraintStart_toEndOf="@+id/gpsIcon"
-        app:layout_constraintTop_toTopOf="@+id/gpsIcon"
-        app:layout_constraintBottom_toBottomOf="@+id/gpsIcon" />
+        app:layout_constraintTop_toTopOf="@+id/gpsIcon" />
 
 
     <ImageView
@@ -52,6 +53,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginStart="32dp"
+        android:background="#00FFFFFF"
         android:src="@drawable/ic_calendar"
         app:layout_constraintStart_toEndOf="@+id/gpsInfo"
         app:layout_constraintTop_toTopOf="@+id/gpsInfo" />
@@ -62,15 +64,16 @@
         android:layout_height="wrap_content"
         android:text="Дата"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dateIcon"
         app:layout_constraintStart_toEndOf="@+id/dateIcon"
-        app:layout_constraintTop_toTopOf="@+id/dateIcon"
-        app:layout_constraintBottom_toBottomOf="@+id/dateIcon" />
+        app:layout_constraintTop_toTopOf="@+id/dateIcon" />
 
     <ImageView
         android:id="@+id/timeIcon"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginStart="32dp"
+        android:background="#00FFFFFF"
         android:src="@drawable/ic_clock"
         app:layout_constraintStart_toEndOf="@+id/dateInfo"
         app:layout_constraintTop_toTopOf="@+id/dateInfo" />
@@ -91,7 +94,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
+        android:backgroundTint="#241BFF"
         android:text="Посмотреть историю"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.609"
@@ -104,6 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Имя"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/pointName"
         app:layout_constraintTop_toTopOf="@+id/pointName" />
 
