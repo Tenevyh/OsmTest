@@ -12,6 +12,9 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:src="@drawable/ic_foto"
+        android:layout_margin="8dp"
+        android:scaleType="fitCenter"
+        android:background="@drawable/rounded_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -9,7 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_map.mapView
 import com.example.osmtest.R
-import com.example.osmtest.customview.PointInfoBottomSheetFragment
 import com.example.osmtest.entity.Coordinates
 import com.example.osmtest.entity.NavigationSystem
 import com.example.osmtest.entity.PointEntity
@@ -29,7 +28,7 @@ class MapFragment : Fragment(R.layout.fragment_map) {
     private lateinit var mapManager: MapManager
     private lateinit var locationOverlayManager: LocationOverlayManager
     private lateinit var permissionManager: PermissionManager
-    private var locationOverlay: MyLocationNewOverlay? = null // Изменено
+    private var locationOverlay: MyLocationNewOverlay? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,7 +36,7 @@ class MapFragment : Fragment(R.layout.fragment_map) {
         mapManager = MapManager(mapView, requireContext())
         permissionManager = PermissionManager(this)
         locationOverlayManager = LocationOverlayManager(mapView)
-        locationOverlay = locationOverlayManager.initializeLocationOverlay() // Изменено
+        locationOverlay = locationOverlayManager.initializeLocationOverlay()
 
         mapView.setOnLongPressListener { x, y ->
             handleLongPress(x, y)
@@ -59,13 +58,13 @@ class MapFragment : Fragment(R.layout.fragment_map) {
     }
 
     private fun onLocationButtonClick() {
-        if (locationOverlay != null && !locationOverlay!!.isMyLocationEnabled) { // Изменено
+        if (locationOverlay != null && !locationOverlay!!.isMyLocationEnabled) {
             if (!permissionManager.hasLocationPermissions()) {
                 permissionManager.requestLocationPermissions()
             }
-        } else if (locationOverlay != null) { // Изменено
-            mapView.controller.animateTo(locationOverlay!!.myLocation) // Изменено
-            mapView.controller.setZoom(17.0) // Изменено
+        } else if (locationOverlay != null) {
+            mapView.controller.animateTo(locationOverlay!!.myLocation)
+            mapView.controller.setZoom(17.0)
         }
     }
 

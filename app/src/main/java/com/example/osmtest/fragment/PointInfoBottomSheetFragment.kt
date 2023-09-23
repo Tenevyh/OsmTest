@@ -1,4 +1,4 @@
-package com.example.osmtest.customview
+package com.example.osmtest.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
